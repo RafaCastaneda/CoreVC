@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serve", "Serve\Serve.csproj", "{EC07E179-D9CE-41EA-B1D1-861DFF1C1CEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{B72D3269-7E7B-4357-98D3-BAA14D6A3AA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{B72D3269-7E7B-4357-98D3-BAA14D6A3AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSClient", "PSClient\PSClient.csproj", "{7A3B04E4-8D34-49AA-AE01-173BCA44879C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B72D3269-7E7B-4357-98D3-BAA14D6A3AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B72D3269-7E7B-4357-98D3-BAA14D6A3AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B72D3269-7E7B-4357-98D3-BAA14D6A3AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A3B04E4-8D34-49AA-AE01-173BCA44879C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A3B04E4-8D34-49AA-AE01-173BCA44879C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A3B04E4-8D34-49AA-AE01-173BCA44879C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A3B04E4-8D34-49AA-AE01-173BCA44879C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

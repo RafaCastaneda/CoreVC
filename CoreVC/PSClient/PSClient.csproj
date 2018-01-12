@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>CoreVC.PSClient</RootNamespace>
+    <AssemblyName>CoreVC.PSClient</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Management.Automation" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>
