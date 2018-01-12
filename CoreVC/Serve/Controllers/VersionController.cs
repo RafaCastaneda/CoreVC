@@ -2,7 +2,7 @@
 
 namespace CoreVC.Serve.Controllers
 {
-    using Models;
+    using Api;
 
     [Route("api/[controller]")]
     public class VersionController : Controller
