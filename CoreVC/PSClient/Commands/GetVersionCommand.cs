@@ -6,10 +6,10 @@ namespace CoreVC.PSClient.Commands
     using Api;
     using Api.Rest;
 
-    [Cmdlet(VerbsCommon.Show, "Version")]
+    [Cmdlet(VerbsCommon.Get, "Version")]
     public class GetVersionCommand : Cmdlet
     {
-        [Parameter(Mandatory = true)]
+        [Parameter(Mandatory = true, Position = 1)]
         public Uri Url { get; set; }
 
         protected override void ProcessRecord()
