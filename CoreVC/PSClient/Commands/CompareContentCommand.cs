@@ -1,12 +1,13 @@
-﻿using System.IO;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Management.Automation;
 using static System.Math;
 
 namespace CoreVC.PSClient.Commands
 {
     [Cmdlet(VerbsData.Compare, "Content")]
-    public class CompareContentCommand : Cmdlet
+    public class CompareContentCommand : PSCmdlet
     {
         [Parameter(Mandatory = true, Position = 1)]
         public string ReferencePath { get; set; }
@@ -16,8 +17,16 @@ namespace CoreVC.PSClient.Commands
 
         protected override void ProcessRecord()
         {
-            string[] reference = File.ReadAllLines(ReferencePath);
-            string[] difference = File.ReadAllLines(DifferencePath);
+            ProviderInfo provider;
+
+            string referencePath = GetResolvedProviderPathFromPSPath(ReferencePath, out provider).FirstOrDefault();
+            string differencePath = GetResolvedProviderPathFromPSPath(DifferencePath, out provider).FirstOrDefault();
+            if (referencePath == null || differencePath == null) {
+                return;
+            }
+
+            string[] reference = File.ReadAllLines(referencePath);
+            string[] difference = File.ReadAllLines(differencePath);
             string[] diff = LCS(reference, difference);
 
             WriteObject(diff);
