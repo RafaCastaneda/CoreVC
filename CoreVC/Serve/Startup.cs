@@ -2,9 +2,13 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace CoreVC.Serve
 {
+    using Services;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -16,7 +20,12 @@ namespace CoreVC.Serve
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc()
+            .AddJsonOptions(option => {
+                option.SerializerSettings.Formatting = Formatting.Indented;
+                option.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
+            services.AddTransient<DirectoryService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

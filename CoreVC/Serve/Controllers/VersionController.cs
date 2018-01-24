@@ -4,6 +4,7 @@ namespace CoreVC.Serve.Controllers
 {
     using Api;
 
+    [Produces("application/json")]
     [Route("api/[controller]")]
     public class VersionController : Controller
     {
